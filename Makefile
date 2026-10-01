@@ -1,8 +1,13 @@
 CC := gcc
 PROJECT := Csengo
-CFLAGS := -Wall -Wextra -Werror -Wpedantic
-LDFLAGS ?=
+
+SDL_CFLAGS := $(shell sdl2-config --cflags)
+SDL_LDFLAGS := $(shell sdl2-config --libs)
+
+CFLAGS := -Wall -Wextra -Werror -Wpedantic $(SDL_CFLAGS) -g
+LDFLAGS := $(SDL_LDFLAGS) -lSDL2_ttf
 INCLUDES := -Iinclude
+
 SRC_DIR := src
 SRC := $(wildcard $(SRC_DIR)/*.c)
 ifeq ($(SRC),)
