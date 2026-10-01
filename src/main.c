@@ -4,7 +4,7 @@
 
 int main(void) {
     platform_t platform = {0};
-    if (platform_init(&platform, "Teszt", 640, 400) != 0) {
+    if (platform_init(&platform, "Csengetés", 640, 400) != 0) {
         return -1;
     }
 
